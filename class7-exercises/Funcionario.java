@@ -6,18 +6,20 @@ class Funcionario {
 	private Data dataEntrada;
 	private int id;
 
-	public static int identificador;
+	public static int identificador = 0;
 
 	public Funcionario(String nome) {
 		this.nome = nome;
-		this.id = identificador++;
+		this.id = Funcionario.identificador++;
 	}
 
 	public int getIdentificador() {
 		return this.id;
 	}
 
-	public Funcionario() {}
+	public Funcionario() {
+		this.id = Funcionario.identificador++;
+	}
 
 	public String getNome() {
 		return this.nome;
